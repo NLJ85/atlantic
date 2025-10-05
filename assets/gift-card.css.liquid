@@ -1,0 +1,1008 @@
+{%- comment -%}font_body{%- endcomment -%}
+
+{%- assign fonts_font_body_display = "swap" | default: 'auto' -%}
+
+  {%- comment -%}Normal{%- endcomment -%}
+
+  {%- assign fonts_font_body_family = settings.font_body.family | append: ',' | append: settings.font_body.fallback_families -%}
+  {%- assign fonts_font_body_style = settings.font_body.style -%}
+  {%- assign fonts_font_body_weight = settings.font_body.weight | times: 1 -%}
+  {{ settings.font_body | font_face: font_display: fonts_font_body_display }}
+
+  {%- comment -%}Italic{%- endcomment -%}
+
+  {%- assign fonts_font_body_style_italic = settings.font_body | font_modify: 'style', 'italic' | map: 'style' | default: 'italic' -%}
+  {{ settings.font_body | font_modify: 'style', 'italic' | font_face: font_display: fonts_font_body_display }}
+
+  {%- comment -%}Bolder{%- endcomment -%}
+
+  {%- assign fonts_weight_adjustment_default = 700 -%}
+  {%- if fonts_font_body_weight > 700 -%}
+    {%- assign fonts_weight_adjustment_default = fonts_font_body_weight -%}
+  {%- endif -%}
+  {%- assign fonts_font_body_bolder = settings.font_body | font_modify: 'weight', 'bolder' -%}
+  {%- assign fonts_font_body_weight_bolder = fonts_font_body_bolder.weight | default: fonts_weight_adjustment_default -%}
+  {{ fonts_font_body_bolder | font_face: font_display: fonts_font_body_display }}
+  {{ fonts_font_body_bolder | font_modify: 'style', 'italic' | font_face: font_display: fonts_font_body_display }}
+
+
+{%- comment -%}font_headings{%- endcomment -%}
+
+{%- assign fonts_font_headings_display = "swap" | default: 'auto' -%}
+
+  {%- comment -%}Normal{%- endcomment -%}
+
+  {%- assign fonts_font_headings_family = settings.font_headings.family | append: ',' | append: settings.font_headings.fallback_families -%}
+  {%- assign fonts_font_headings_style = settings.font_headings.style -%}
+  {%- assign fonts_font_headings_weight = settings.font_headings.weight | times: 1 -%}
+  {{ settings.font_headings | font_face: font_display: fonts_font_headings_display }}
+
+  {%- comment -%}Italic{%- endcomment -%}
+
+  {%- assign fonts_font_headings_style_italic = settings.font_headings | font_modify: 'style', 'italic' | map: 'style' | default: 'italic' -%}
+  {{ settings.font_headings | font_modify: 'style', 'italic' | font_face: font_display: fonts_font_headings_display }}
+
+  {%- comment -%}Bolder{%- endcomment -%}
+
+  {%- assign fonts_weight_adjustment_default = 700 -%}
+  {%- if fonts_font_headings_weight > 700 -%}
+    {%- assign fonts_weight_adjustment_default = fonts_font_headings_weight -%}
+  {%- endif -%}
+  {%- assign fonts_font_headings_bolder = settings.font_headings | font_modify: 'weight', 'bolder' -%}
+  {%- assign fonts_font_headings_weight_bolder = fonts_font_headings_bolder.weight | default: fonts_weight_adjustment_default -%}
+  {{ fonts_font_headings_bolder | font_face: font_display: fonts_font_headings_display }}
+  {{ fonts_font_headings_bolder | font_modify: 'style', 'italic' | font_face: font_display: fonts_font_headings_display }}
+
+  {%- comment -%}Lighter{%- endcomment -%}
+
+  {%- assign fonts_weight_adjustment_default = 300 -%}
+  {%- if fonts_font_headings_weight < 300 -%}
+    {%- assign fonts_weight_adjustment_default = fonts_font_headings_weight -%}
+  {%- endif -%}
+  {%- assign fonts_font_headings_lighter = settings.font_headings | font_modify: 'weight', 'lighter' -%}
+  {%- assign fonts_font_headings_weight_lighter = fonts_font_headings_lighter.weight | default: fonts_weight_adjustment_default -%}
+  {{ fonts_font_headings_lighter | font_face: font_display: fonts_font_headings_display }}
+  {{ fonts_font_headings_lighter | font_modify: 'style', 'italic' | font_face: font_display: fonts_font_headings_display }}
+
+
+{%- comment -%}font_headings_secondary{%- endcomment -%}
+
+{%- assign fonts_font_headings_secondary_display = "swap" | default: 'auto' -%}
+
+  {%- comment -%}Normal{%- endcomment -%}
+
+  {%- assign fonts_font_headings_secondary_family = settings.font_headings_secondary.family | append: ',' | append: settings.font_headings_secondary.fallback_families -%}
+  {%- assign fonts_font_headings_secondary_style = settings.font_headings_secondary.style -%}
+  {%- assign fonts_font_headings_secondary_weight = settings.font_headings_secondary.weight | times: 1 -%}
+  {{ settings.font_headings_secondary | font_face: font_display: fonts_font_headings_secondary_display }}
+
+  {%- comment -%}Italic{%- endcomment -%}
+
+  {%- assign fonts_font_headings_secondary_style_italic = settings.font_headings_secondary | font_modify: 'style', 'italic' | map: 'style' | default: 'italic' -%}
+  {{ settings.font_headings_secondary | font_modify: 'style', 'italic' | font_face: font_display: fonts_font_headings_secondary_display }}
+
+  {%- comment -%}Bolder{%- endcomment -%}
+
+  {%- assign fonts_weight_adjustment_default = 700 -%}
+  {%- if fonts_font_headings_secondary_weight > 700 -%}
+    {%- assign fonts_weight_adjustment_default = fonts_font_headings_secondary_weight -%}
+  {%- endif -%}
+  {%- assign fonts_font_headings_secondary_bolder = settings.font_headings_secondary | font_modify: 'weight', 'bolder' -%}
+  {%- assign fonts_font_headings_secondary_weight_bolder = fonts_font_headings_secondary_bolder.weight | default: fonts_weight_adjustment_default -%}
+  {{ fonts_font_headings_secondary_bolder | font_face: font_display: fonts_font_headings_secondary_display }}
+  {{ fonts_font_headings_secondary_bolder | font_modify: 'style', 'italic' | font_face: font_display: fonts_font_headings_secondary_display }}
+
+
+{%- comment -%}font_accent{%- endcomment -%}
+
+{%- assign fonts_font_accent_display = "swap" | default: 'auto' -%}
+
+  {%- comment -%}Normal{%- endcomment -%}
+
+  {%- assign fonts_font_accent_family = settings.font_accent.family | append: ',' | append: settings.font_accent.fallback_families -%}
+  {%- assign fonts_font_accent_style = settings.font_accent.style -%}
+  {%- assign fonts_font_accent_weight = settings.font_accent.weight | times: 1 -%}
+  {{ settings.font_accent | font_face: font_display: fonts_font_accent_display }}
+
+  {%- comment -%}Italic{%- endcomment -%}
+
+  {%- assign fonts_font_accent_style_italic = settings.font_accent | font_modify: 'style', 'italic' | map: 'style' | default: 'italic' -%}
+  {{ settings.font_accent | font_modify: 'style', 'italic' | font_face: font_display: fonts_font_accent_display }}
+
+  {%- comment -%}Bolder{%- endcomment -%}
+
+  {%- assign fonts_weight_adjustment_default = 700 -%}
+  {%- if fonts_font_accent_weight > 700 -%}
+    {%- assign fonts_weight_adjustment_default = fonts_font_accent_weight -%}
+  {%- endif -%}
+  {%- assign fonts_font_accent_bolder = settings.font_accent | font_modify: 'weight', 'bolder' -%}
+  {%- assign fonts_font_accent_weight_bolder = fonts_font_accent_bolder.weight | default: fonts_weight_adjustment_default -%}
+  {{ fonts_font_accent_bolder | font_face: font_display: fonts_font_accent_display }}
+  {{ fonts_font_accent_bolder | font_modify: 'style', 'italic' | font_face: font_display: fonts_font_accent_display }}
+
+  {%- comment -%}Lighter{%- endcomment -%}
+
+  {%- assign fonts_weight_adjustment_default = 300 -%}
+  {%- if fonts_font_accent_weight < 300 -%}
+    {%- assign fonts_weight_adjustment_default = fonts_font_accent_weight -%}
+  {%- endif -%}
+  {%- assign fonts_font_accent_lighter = settings.font_accent | font_modify: 'weight', 'lighter' -%}
+  {%- assign fonts_font_accent_weight_lighter = fonts_font_accent_lighter.weight | default: fonts_weight_adjustment_default -%}
+  {{ fonts_font_accent_lighter | font_face: font_display: fonts_font_accent_display }}
+  {{ fonts_font_accent_lighter | font_modify: 'style', 'italic' | font_face: font_display: fonts_font_accent_display }}
+{% assign primary_border_lightness = settings.primary-border-colour | color_extract: 'lightness' %}
+
+  {% if primary_border_lightness > 50 %}
+    {% assign color_secondary_border = settings.primary-border-colour | color_lighten: 5 %}
+  {% else %}
+    {% assign color_secondary_border = settings.primary-border-colour | color_darken: 5 %}
+  {% endif %}
+{% assign background_lightness = settings.background-colour | color_extract: 'lightness' %}
+
+  {% if background_lightness > 50 %}
+    {% assign color_faceted_filter_swatch_border = settings.background-colour | color_darken: 15 %}
+  {% else %}
+    {% assign color_faceted_filter_swatch_border = settings.background-colour | color_lighten: 30 %}
+  {% endif %}
+{% assign contrast_base_color = settings.nav-border-colour %}
+  {% assign contrast_adjustment = 15 %}
+  {% capture nav_border_hover %}{% comment %}Inject contrast begin{% endcomment %}
+{% comment %}
+Calculate contrasting colour based on lightness of supplied colour value
+
+@param contrast_base_color {String}
+  Color setting on which to base the calculation
+@param contrast_adjustment {Integer}
+  A value indicating the percentage of contrast to be applied
+{% endcomment %}
+
+{% assign color_lightness = contrast_base_color | color_extract: 'lightness' %}
+
+{% if color_lightness > 50 %}
+  {% assign contrast_color = contrast_base_color | color_darken: contrast_adjustment %}
+{% else %}
+  {% assign contrast_color = contrast_base_color | color_lighten: contrast_adjustment %}
+{% endif %}
+
+{{ contrast_color }}
+
+{% assign contrast_base_color = blank %}
+{% assign contrast_adjustment = blank %}
+{% comment %}Inject contrast end{% endcomment %}
+{% endcapture %}
+
+  {% assign contrast_base_color = settings.nav-background-colour %}
+  {% assign contrast_adjustment = 5 %}
+  {% capture nav_background_low_contrast %}{% comment %}Inject contrast begin{% endcomment %}
+{% comment %}
+Calculate contrasting colour based on lightness of supplied colour value
+
+@param contrast_base_color {String}
+  Color setting on which to base the calculation
+@param contrast_adjustment {Integer}
+  A value indicating the percentage of contrast to be applied
+{% endcomment %}
+
+{% assign color_lightness = contrast_base_color | color_extract: 'lightness' %}
+
+{% if color_lightness > 50 %}
+  {% assign contrast_color = contrast_base_color | color_darken: contrast_adjustment %}
+{% else %}
+  {% assign contrast_color = contrast_base_color | color_lighten: contrast_adjustment %}
+{% endif %}
+
+{{ contrast_color }}
+
+{% assign contrast_base_color = blank %}
+{% assign contrast_adjustment = blank %}
+{% comment %}Inject contrast end{% endcomment %}
+{% endcapture %}
+
+  {% assign contrast_base_color = settings.nav-background-colour %}
+  {% assign contrast_adjustment = 8 %}
+  {% capture nav_background_higher_contrast %}{% comment %}Inject contrast begin{% endcomment %}
+{% comment %}
+Calculate contrasting colour based on lightness of supplied colour value
+
+@param contrast_base_color {String}
+  Color setting on which to base the calculation
+@param contrast_adjustment {Integer}
+  A value indicating the percentage of contrast to be applied
+{% endcomment %}
+
+{% assign color_lightness = contrast_base_color | color_extract: 'lightness' %}
+
+{% if color_lightness > 50 %}
+  {% assign contrast_color = contrast_base_color | color_darken: contrast_adjustment %}
+{% else %}
+  {% assign contrast_color = contrast_base_color | color_lighten: contrast_adjustment %}
+{% endif %}
+
+{{ contrast_color }}
+
+{% assign contrast_base_color = blank %}
+{% assign contrast_adjustment = blank %}
+{% comment %}Inject contrast end{% endcomment %}
+{% endcapture %}
+
+  {% assign contrast_base_color = settings.background-colour %}
+  {% assign contrast_adjustment = 5 %}
+  {% capture placeholder_svg_background %}{% comment %}Inject contrast begin{% endcomment %}
+{% comment %}
+Calculate contrasting colour based on lightness of supplied colour value
+
+@param contrast_base_color {String}
+  Color setting on which to base the calculation
+@param contrast_adjustment {Integer}
+  A value indicating the percentage of contrast to be applied
+{% endcomment %}
+
+{% assign color_lightness = contrast_base_color | color_extract: 'lightness' %}
+
+{% if color_lightness > 50 %}
+  {% assign contrast_color = contrast_base_color | color_darken: contrast_adjustment %}
+{% else %}
+  {% assign contrast_color = contrast_base_color | color_lighten: contrast_adjustment %}
+{% endif %}
+
+{{ contrast_color }}
+
+{% assign contrast_base_color = blank %}
+{% assign contrast_adjustment = blank %}
+{% comment %}Inject contrast end{% endcomment %}
+{% endcapture %}
+
+  {% assign darkened_placeholder_svg_background = placeholder_svg_background | color_darken: 5 %}
+{% assign morph_base_color = settings.logotype-link-colour %}
+  {% assign morph_adjustment = '' %}
+  {% capture logo_link_color_hover %}{% comment %}Inject morph begin{% endcomment %}
+{% comment %}
+  This adjusts the color to give it an appropriate difference from the original color.
+  It is usually used for link hover color, and things where we need to distinguish a change.
+
+  @param morph_base_color {Color}
+    The origin color to morph
+
+  @param morph_adjustment {Number}
+    The number to multiply the lightness and saturation by. Default 2.
+{% endcomment %}
+
+{% if morph_adjustment == blank %}
+  {% assign morph_adjustment = 2 %}
+{% endif %}
+
+{% assign morph_adjustment = morph_adjustment | times: 1.0 %}
+
+{% assign color_lightness = morph_base_color | color_extract: 'lightness' %}
+
+{% if color_lightness > 20.0 %}
+  {% if color_lightness > 50.0 %}
+    {% assign light_adjustment = color_lightness | divided_by: 25.0 | times: morph_adjustment %}
+  {% else %}
+    {% assign light_adjustment = color_lightness | divided_by: 15.0 | times: morph_adjustment %}
+  {% endif %}
+  {% assign new_color = morph_base_color | color_darken: light_adjustment %}
+{% else %}
+  {% if color_lightness < 7.0 %}
+    {% assign light_adjustment = 3.0 | times: morph_adjustment %}
+    {% assign new_color = morph_base_color | color_desaturate: 45.0 %}
+  {% elsif color_lightness < 12.0 %}
+    {% assign light_adjustment = 2.25 | times: morph_adjustment %}
+    {% assign new_color = morph_base_color | color_desaturate: 15.0 %}
+  {% else %}
+    {% assign light_adjustment = 1.75 | times: morph_adjustment %}
+    {% assign new_color = morph_base_color %}
+  {% endif %}
+  {% assign new_color = new_color | color_lighten: light_adjustment %}
+{% endif %}
+
+{{ new_color }}
+
+{% assign morph_base_color = blank %}
+{% assign morph_adjustment = blank %}
+{% comment %}Inject morph end{% endcomment %}
+{% endcapture %}
+
+  {% assign morph_base_color = settings.accent-colour %}
+  {% capture accent_color_hover %}{% comment %}Inject morph begin{% endcomment %}
+{% comment %}
+  This adjusts the color to give it an appropriate difference from the original color.
+  It is usually used for link hover color, and things where we need to distinguish a change.
+
+  @param morph_base_color {Color}
+    The origin color to morph
+
+  @param morph_adjustment {Number}
+    The number to multiply the lightness and saturation by. Default 2.
+{% endcomment %}
+
+{% if morph_adjustment == blank %}
+  {% assign morph_adjustment = 2 %}
+{% endif %}
+
+{% assign morph_adjustment = morph_adjustment | times: 1.0 %}
+
+{% assign color_lightness = morph_base_color | color_extract: 'lightness' %}
+
+{% if color_lightness > 20.0 %}
+  {% if color_lightness > 50.0 %}
+    {% assign light_adjustment = color_lightness | divided_by: 25.0 | times: morph_adjustment %}
+  {% else %}
+    {% assign light_adjustment = color_lightness | divided_by: 15.0 | times: morph_adjustment %}
+  {% endif %}
+  {% assign new_color = morph_base_color | color_darken: light_adjustment %}
+{% else %}
+  {% if color_lightness < 7.0 %}
+    {% assign light_adjustment = 3.0 | times: morph_adjustment %}
+    {% assign new_color = morph_base_color | color_desaturate: 45.0 %}
+  {% elsif color_lightness < 12.0 %}
+    {% assign light_adjustment = 2.25 | times: morph_adjustment %}
+    {% assign new_color = morph_base_color | color_desaturate: 15.0 %}
+  {% else %}
+    {% assign light_adjustment = 1.75 | times: morph_adjustment %}
+    {% assign new_color = morph_base_color %}
+  {% endif %}
+  {% assign new_color = new_color | color_lighten: light_adjustment %}
+{% endif %}
+
+{{ new_color }}
+
+{% assign morph_base_color = blank %}
+{% assign morph_adjustment = blank %}
+{% comment %}Inject morph end{% endcomment %}
+{% endcapture %}
+
+  {% assign morph_base_color = settings.nav-link-colour %}
+  {% assign morph_adjustment = 6 %}
+  {% capture nav_link_color_hover %}{% comment %}Inject morph begin{% endcomment %}
+{% comment %}
+  This adjusts the color to give it an appropriate difference from the original color.
+  It is usually used for link hover color, and things where we need to distinguish a change.
+
+  @param morph_base_color {Color}
+    The origin color to morph
+
+  @param morph_adjustment {Number}
+    The number to multiply the lightness and saturation by. Default 2.
+{% endcomment %}
+
+{% if morph_adjustment == blank %}
+  {% assign morph_adjustment = 2 %}
+{% endif %}
+
+{% assign morph_adjustment = morph_adjustment | times: 1.0 %}
+
+{% assign color_lightness = morph_base_color | color_extract: 'lightness' %}
+
+{% if color_lightness > 20.0 %}
+  {% if color_lightness > 50.0 %}
+    {% assign light_adjustment = color_lightness | divided_by: 25.0 | times: morph_adjustment %}
+  {% else %}
+    {% assign light_adjustment = color_lightness | divided_by: 15.0 | times: morph_adjustment %}
+  {% endif %}
+  {% assign new_color = morph_base_color | color_darken: light_adjustment %}
+{% else %}
+  {% if color_lightness < 7.0 %}
+    {% assign light_adjustment = 3.0 | times: morph_adjustment %}
+    {% assign new_color = morph_base_color | color_desaturate: 45.0 %}
+  {% elsif color_lightness < 12.0 %}
+    {% assign light_adjustment = 2.25 | times: morph_adjustment %}
+    {% assign new_color = morph_base_color | color_desaturate: 15.0 %}
+  {% else %}
+    {% assign light_adjustment = 1.75 | times: morph_adjustment %}
+    {% assign new_color = morph_base_color %}
+  {% endif %}
+  {% assign new_color = new_color | color_lighten: light_adjustment %}
+{% endif %}
+
+{{ new_color }}
+
+{% assign morph_base_color = blank %}
+{% assign morph_adjustment = blank %}
+{% comment %}Inject morph end{% endcomment %}
+{% endcapture %}
+
+  {% assign morph_base_color = settings.header-action-link-colour %}
+  {% capture header_action_link_color_hover %}{% comment %}Inject morph begin{% endcomment %}
+{% comment %}
+  This adjusts the color to give it an appropriate difference from the original color.
+  It is usually used for link hover color, and things where we need to distinguish a change.
+
+  @param morph_base_color {Color}
+    The origin color to morph
+
+  @param morph_adjustment {Number}
+    The number to multiply the lightness and saturation by. Default 2.
+{% endcomment %}
+
+{% if morph_adjustment == blank %}
+  {% assign morph_adjustment = 2 %}
+{% endif %}
+
+{% assign morph_adjustment = morph_adjustment | times: 1.0 %}
+
+{% assign color_lightness = morph_base_color | color_extract: 'lightness' %}
+
+{% if color_lightness > 20.0 %}
+  {% if color_lightness > 50.0 %}
+    {% assign light_adjustment = color_lightness | divided_by: 25.0 | times: morph_adjustment %}
+  {% else %}
+    {% assign light_adjustment = color_lightness | divided_by: 15.0 | times: morph_adjustment %}
+  {% endif %}
+  {% assign new_color = morph_base_color | color_darken: light_adjustment %}
+{% else %}
+  {% if color_lightness < 7.0 %}
+    {% assign light_adjustment = 3.0 | times: morph_adjustment %}
+    {% assign new_color = morph_base_color | color_desaturate: 45.0 %}
+  {% elsif color_lightness < 12.0 %}
+    {% assign light_adjustment = 2.25 | times: morph_adjustment %}
+    {% assign new_color = morph_base_color | color_desaturate: 15.0 %}
+  {% else %}
+    {% assign light_adjustment = 1.75 | times: morph_adjustment %}
+    {% assign new_color = morph_base_color %}
+  {% endif %}
+  {% assign new_color = new_color | color_lighten: light_adjustment %}
+{% endif %}
+
+{{ new_color }}
+
+{% assign morph_base_color = blank %}
+{% assign morph_adjustment = blank %}
+{% comment %}Inject morph end{% endcomment %}
+{% endcapture %}
+
+  {% assign morph_base_color = settings.text-colour | color_mix: settings.background-colour, 70 %}
+  {% capture link_color_hover %}{% comment %}Inject morph begin{% endcomment %}
+{% comment %}
+  This adjusts the color to give it an appropriate difference from the original color.
+  It is usually used for link hover color, and things where we need to distinguish a change.
+
+  @param morph_base_color {Color}
+    The origin color to morph
+
+  @param morph_adjustment {Number}
+    The number to multiply the lightness and saturation by. Default 2.
+{% endcomment %}
+
+{% if morph_adjustment == blank %}
+  {% assign morph_adjustment = 2 %}
+{% endif %}
+
+{% assign morph_adjustment = morph_adjustment | times: 1.0 %}
+
+{% assign color_lightness = morph_base_color | color_extract: 'lightness' %}
+
+{% if color_lightness > 20.0 %}
+  {% if color_lightness > 50.0 %}
+    {% assign light_adjustment = color_lightness | divided_by: 25.0 | times: morph_adjustment %}
+  {% else %}
+    {% assign light_adjustment = color_lightness | divided_by: 15.0 | times: morph_adjustment %}
+  {% endif %}
+  {% assign new_color = morph_base_color | color_darken: light_adjustment %}
+{% else %}
+  {% if color_lightness < 7.0 %}
+    {% assign light_adjustment = 3.0 | times: morph_adjustment %}
+    {% assign new_color = morph_base_color | color_desaturate: 45.0 %}
+  {% elsif color_lightness < 12.0 %}
+    {% assign light_adjustment = 2.25 | times: morph_adjustment %}
+    {% assign new_color = morph_base_color | color_desaturate: 15.0 %}
+  {% else %}
+    {% assign light_adjustment = 1.75 | times: morph_adjustment %}
+    {% assign new_color = morph_base_color %}
+  {% endif %}
+  {% assign new_color = new_color | color_lighten: light_adjustment %}
+{% endif %}
+
+{{ new_color }}
+
+{% assign morph_base_color = blank %}
+{% assign morph_adjustment = blank %}
+{% comment %}Inject morph end{% endcomment %}
+{% endcapture %}
+{% assign color_error_dark = 'rgb(238, 87, 90)' %}
+{% assign inventory_status_bar_background = settings.text-colour | color_modify: 'alpha', 0.1 %}
+@keyframes placeholder-pulse {
+  from {
+    background-color: {{ placeholder_svg_background }};
+  }
+  to {
+    background-color: {{ darkened_placeholder_svg_background }};
+  }
+}
+.template-gift_card {
+  font-family: {{ fonts_font_body_family }};
+  font-style: {{ fonts_font_body_style }};
+  font-weight: {{ fonts_font_body_weight }};
+}
+.template-gift_card a {
+  text-decoration: none;
+}
+.template-gift_card .btn {
+  display: inline-block;
+  order: 2;
+  width: max-content;
+  padding: 1.5em;
+  font-size: 0.875em;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-transform: uppercase;
+  vertical-align: baseline;
+  background-color: #58686f;
+  border-radius: 4px;
+  zoom: 1;
+}
+.template-gift_card .btn:hover {
+  background-color: #414d53;
+}
+.template-gift_card .wrap {
+  width: 95%;
+  max-width: 540px;
+  margin: 0 auto;
+}
+.template-gift_card .wrap::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+@keyframes slideup {
+  0% {
+    opacity: 0;
+    transform: translateY(2000px) rotate(10deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+  80% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+@keyframes popup {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+  80% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes container-slide {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+.template-gift_card header {
+  padding: 3em 0;
+  text-align: center;
+  animation: fadein 0.5s ease-in-out both 0.4s;
+}
+.template-gift_card .shop-title {
+  font-family: {{ fonts_font_headings_family }};
+  font-style: {{ fonts_font_headings_style }};
+  font-weight: {{ fonts_font_headings_weight }};
+  display: block;
+  max-width: 300px;
+  margin: 0 auto;
+  font-size: 2.25em;
+  color: #bfbfbf;
+  word-break: break-word;
+}
+.template-gift_card .shop-title:hover {
+  color: #999;
+}
+.template-gift_card .shop-title img {
+  max-height: 100%;
+  margin: 0 auto;
+}
+.template-gift_card main {
+  padding-bottom: 3em;
+  animation: slideup 0.8s ease-in-out;
+}
+.template-gift_card .gift-card-outer-container {
+  padding: 1em;
+  background-color: #34aadc;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset;
+  animation: container-slide 0.8s ease-in-out;
+}
+.template-gift_card .gift-card-inner-container {
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  animation: cardslide 0.8s ease-in-out;
+}
+.template-gift_card .gift-card-inner-container::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.template-gift_card .gift-card-header {
+  position: relative;
+  display: block;
+  padding: 0.75em;
+  overflow: hidden;
+  border-bottom: 1px solid #f2f2f2;
+}
+.template-gift_card .gift-card-header h2 {
+  float: left;
+  margin: 0.12em 0;
+  font-family: {{ fonts_font_headings_family }};
+  font-style: {{ fonts_font_headings_style }};
+  font-weight: {{ fonts_font_headings_weight_lighter }};
+}
+.template-gift_card .gift-card-header .tag {
+  float: right;
+}
+.template-gift_card .tag {
+  padding: 0.5em;
+  padding-bottom: 0.35em;
+  font-size: 0.75em;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #bfbfbf;
+  border-radius: 4px;
+}
+.template-gift_card .tag.light {
+  color: #bfbfbf;
+  background: transparent;
+  border: 1px solid #d9d9d9;
+}
+.template-gift_card .gift-card-holder {
+  position: relative;
+  margin: 1.25em 0.75em;
+}
+.template-gift_card .gift-card-holder .corner {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 47px;
+  height: 47px;
+}
+.template-gift_card .gift-card-holder .corner.top-left {
+  top: -1px;
+  left: -1px;
+  background: url("//cdn.shopify.com/s/assets/gift-card/corner-top-left-1585103bdd46bf1297b88f31bdfce999.png") 0 0 no-repeat;
+}
+.template-gift_card .gift-card-holder .corner.bottom-right {
+  right: -1px;
+  bottom: -1px;
+  background: url("//cdn.shopify.com/s/assets/gift-card/corner-bottom-right-ba899b18631cb91859e186c2cc1c6970.png") 0 0 no-repeat;
+}
+.template-gift_card .gift-card {
+  position: relative;
+  box-sizing: border-box;
+}
+.template-gift_card .gift-card::before {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 10px;
+  content: "";
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  -webkit-user-select: none;
+          user-select: none;
+}
+.template-gift_card .gift-card img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+.template-gift_card .gift-card-code-outer {
+  position: absolute;
+  bottom: 1em;
+  width: 100%;
+  text-align: center;
+}
+.template-gift_card .gift-card-code-outer.medium {
+  font-size: 0.875em;
+}
+.template-gift_card .gift-card-code-outer.small {
+  font-size: 0.75em;
+}
+.template-gift_card .gift-card-code-inner {
+  display: inline-block;
+  max-width: 450px;
+  padding: 0.5em;
+  vertical-align: baseline;
+  background-color: #fff;
+  border-radius: 4px;
+  zoom: 1;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+.template-gift_card .gift-card-code-inner strong {
+  font-style: {{ fonts_font_body_style }};
+  font-weight: {{ fonts_font_body_weight }};
+  display: inline-block;
+  padding: 0.4em 0.5em;
+  font-size: 1.875em;
+  line-height: 1;
+  color: #777;
+  text-transform: uppercase;
+  vertical-align: baseline;
+  border: 1px dashed #e5e5e5;
+  border-radius: 2px;
+  zoom: 1;
+}
+.template-gift_card .small .gift-card-code-inner {
+  overflow: auto;
+}
+.template-gift_card .disabled .gift-card-code-inner strong {
+  color: #999;
+  text-decoration: line-through;
+}
+.template-gift_card .gift-card-code-inner span + span {
+  margin-left: 0.25em;
+}
+.template-gift_card .gift-card-amount {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.4em 0.5em;
+  font-size: 2.75em;
+  color: #fff;
+}
+.template-gift_card .gift-card-amount.medium {
+  font-size: 2.25em;
+}
+.template-gift_card .gift-card-amount strong {
+  display: block;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+.template-gift_card .tooltip {
+  position: relative;
+}
+.template-gift_card .tooltip:hover .tooltip-container {
+  display: block;
+}
+.template-gift_card .tooltip-container {
+  position: absolute;
+  top: -50%;
+  right: 50%;
+  z-index: 3;
+  display: block;
+  margin-top: 0.25em;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  animation: popup 0.5s ease-in-out both 0.7s;
+}
+.template-gift_card .tooltip-triangle {
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  display: block;
+  width: 0;
+  height: 0;
+  margin-bottom: -5px;
+  margin-left: -5px;
+  border-top: 5px solid rgba(51, 51, 51, 0.9);
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  content: "";
+}
+.template-gift_card .tooltip-label {
+  font-family: {{ fonts_font_body_family }};
+  font-style: {{ fonts_font_body_style }};
+  font-weight: {{ fonts_font_body_weight }};
+  display: block;
+  position: relative;
+  right: -50%;
+  display: block;
+  min-height: 14px;
+  padding: 0.5em 0.75em;
+  margin-left: 0.25em;
+  font-size: 0.4em;
+  font-weight: 400;
+  line-height: 16px;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: none;
+  background: rgba(51, 51, 51, 0.9);
+  border: 0;
+  border-radius: 4px;
+}
+.template-gift_card .gift-card-instructions {
+  margin: 0 0.75em 1.5em;
+  font-size: 0.875em;
+  color: #999;
+  text-align: center;
+}
+.template-gift_card .gift-card-qr-code {
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+.template-gift_card .gift-card-qr-code img {
+  padding: 1.25em;
+  margin: 0 auto 1.25em;
+  border: 1px solid #f2f2f2;
+  border-radius: 10px;
+}
+.template-gift_card .gift-card-actions {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 1.25em 0.75em;
+  overflow: hidden;
+  text-align: center;
+  border-top: 1px solid #f2f2f2;
+}
+.template-gift_card .action-link {
+  order: 1;
+  margin-top: 1.75em;
+  font-size: 0.875em;
+  text-align: left;
+  letter-spacing: 0.2em;
+  color: #bfbfbf;
+  text-transform: uppercase;
+}
+.template-gift_card .action-link:hover {
+  color: #999;
+}
+.template-gift_card .action-link:hover .ico-16 {
+  opacity: 0.4;
+}
+.template-gift_card .ico-16 {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  margin-right: 0.5em;
+  margin-bottom: -1px;
+  vertical-align: bottom;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  opacity: 0.25;
+  zoom: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+.template-gift_card .ico-16.print {
+  background-image: url("//cdn.shopify.com/s/assets/gift-card/icon-print-164daa1ae32d10d1f9b83ac21b6f2c70.png");
+}
+.template-gift_card footer[role=contentinfo] {
+  padding-bottom: 3em;
+  text-align: center;
+  animation: fadein 0.5s ease-in-out both 0.4s;
+}
+.template-gift_card .gift-card-apple-wallet-badge {
+  display: inline-block;
+}
+.template-gift_card .gift-card-apple-wallet-badge-image {
+  display: block;
+}
+@media screen and (max-width: 580px) {
+  .template-gift_card body {
+    font-size: 15px;
+  }
+  .template-gift_card h2 {
+    font-size: 1.5em;
+  }
+  .template-gift_card .gift-card-outer-container {
+    padding: 0.5em;
+  }
+  .template-gift_card .tooltip-container {
+    top: -65%;
+  }
+  .template-gift_card .gift-card-actions {
+    grid-template-columns: 1fr;
+  }
+  .template-gift_card .gift-card-actions .btn {
+    order: 1;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    font-size: 1.125em;
+  }
+  .template-gift_card .action-link {
+    order: 2;
+    font-size: 1.125em;
+    text-align: center;
+  }
+  .template-gift_card .action-link + .action-link {
+    margin-left: 1.5em;
+  }
+}
+@media screen and (max-width: 400px) {
+  .template-gift_card h2 {
+    font-size: 1.25em;
+  }
+  .template-gift_card .gift-card {
+    font-size: 10px;
+  }
+  .template-gift_card .gift-card-holder .corner {
+    display: none;
+  }
+  .template-gift_card .gift-card-holder .corner.bottom-right {
+    background-position: bottom right !important;
+  }
+  .template-gift_card .gift-card-amount strong {
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  }
+  .template-gift_card .tooltip-container {
+    top: -75%;
+  }
+}
+@media screen and (max-height: 800px) {
+  .template-gift_card .shop-title {
+    max-height: 100px;
+  }
+}
+@media screen and (max-height: 750px) {
+  .template-gift_card .shop-title {
+    max-height: 80px;
+  }
+  .template-gift_card header {
+    padding: 2em 0;
+  }
+  .template-gift_card footer[role=contentinfo],
+  .template-gift_card main {
+    padding-bottom: 2em;
+  }
+}
+@media print {
+  @page {
+    .template-gift_card {
+      margin: 0.5cm;
+    }
+  }
+  .template-gift_card p,
+  .template-gift_card h2,
+  .template-gift_card h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  .template-gift_card h2,
+  .template-gift_card h3 {
+    page-break-after: avoid;
+  }
+  .template-gift_card body {
+    background-color: #fff;
+  }
+  .template-gift_card .gift-card-actions,
+  .template-gift_card .gift-card-holder .corner,
+  .template-gift_card .tooltip-container,
+  .template-gift_card .gift-card::before {
+    display: none;
+  }
+  .template-gift_card .gift-card-code-inner strong {
+    color: #555;
+  }
+  .template-gift_card .gift-card-amount .tooltip {
+    color: #fff !important;
+  }
+  .template-gift_card .shop-title {
+    color: #58686f;
+  }
+  .template-gift_card .gift-card-outer-container,
+  .template-gift_card .gift-card-inner-container,
+  .template-gift_card .gift-card-code-inner,
+  .template-gift_card .gift-card::before {
+    box-shadow: none;
+  }
+}

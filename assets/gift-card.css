@@ -1,0 +1,722 @@
+@font-face {
+  font-family: "Nunito Sans";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("//www.queenanna.co/cdn/fonts/nunito_sans/nunitosans_n4.0276fe080df0ca4e6a22d9cb55aed3ed5ba6b1da.woff2?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=390587cb899afd27d1637067abe4a7c72332cc2e0a1d200e9d08f6380d540750") format("woff2"),
+       url("//www.queenanna.co/cdn/fonts/nunito_sans/nunitosans_n4.b4964bee2f5e7fd9c3826447e73afe2baad607b7.woff?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=cab9b94665d5295143cd51ad211c3b8b89d352fc2ef6b318ae3aee428726b370") format("woff");
+}
+
+@font-face {
+  font-family: "Nunito Sans";
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("//www.queenanna.co/cdn/fonts/nunito_sans/nunitosans_i4.6e408730afac1484cf297c30b0e67c86d17fc586.woff2?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=797f27bd3895d2e4de09b763d87189dae37a7ed06f401c0ab6a557d91d2b5112") format("woff2"),
+       url("//www.queenanna.co/cdn/fonts/nunito_sans/nunitosans_i4.c9b6dcbfa43622b39a5990002775a8381942ae38.woff?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=b1015095524c45e1d15e7acdb4d4c3320ef640b113669b7b1ba2f7229d7bb808") format("woff");
+}
+
+@font-face {
+  font-family: "Nunito Sans";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("//www.queenanna.co/cdn/fonts/nunito_sans/nunitosans_n7.25d963ed46da26098ebeab731e90d8802d989fa5.woff2?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=4791bfd8a9b0f9f5ac2b08843ca25507c421e67650228d962a752f05069fa367") format("woff2"),
+       url("//www.queenanna.co/cdn/fonts/nunito_sans/nunitosans_n7.d32e3219b3d2ec82285d3027bd673efc61a996c8.woff?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=e6fc6297b5b465ec7122b3d9da28cb33192b49be52f27d33e5d494e7c361f2fb") format("woff");
+}
+
+  @font-face {
+  font-family: "Nunito Sans";
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("//www.queenanna.co/cdn/fonts/nunito_sans/nunitosans_i7.8c1124729eec046a321e2424b2acf328c2c12139.woff2?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=8ed8c31d052738c672fa1b430e585beb54b415907c26cf6c11d11f0fedb06624") format("woff2"),
+       url("//www.queenanna.co/cdn/fonts/nunito_sans/nunitosans_i7.af4cda04357273e0996d21184432bcb14651a64d.woff?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=b0345f5908dcff41ce94b6519bf706e45930da7343937fa25b9d8bec21711e51") format("woff");
+}
+
+@font-face {
+  font-family: "Crimson Text";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("//www.queenanna.co/cdn/fonts/crimson_text/crimsontext_n4.a9a5f5ab47c6f5346e7cd274511a5d08c59fb906.woff2?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=d66e0480f2db0790f1c0125e4c6ef7151da39080872e63d86b0d45d62b69300f") format("woff2"),
+       url("//www.queenanna.co/cdn/fonts/crimson_text/crimsontext_n4.e89f2f0678223181d995b90850b6894b928b2f96.woff?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=3669ed32a12748c82ebb0b3de543ef10095c515c267c47e04275176027d94b36") format("woff");
+}
+
+@font-face {
+  font-family: "Crimson Text";
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("//www.queenanna.co/cdn/fonts/crimson_text/crimsontext_i4.ea961043037945875bf37df9b6f6bf968be445ba.woff2?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=92e86c0a4b8cae8c60672b10199046575dbde82ead52bbd3f39d22f56e9f9815") format("woff2"),
+       url("//www.queenanna.co/cdn/fonts/crimson_text/crimsontext_i4.7938dd4c556b9b9430c9ff6e18ae066c8e9db49b.woff?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=43012e2c83d0888199611c45369585f8ba412e198820e5a9f8c9668f586a946d") format("woff");
+}
+
+@font-face {
+  font-family: "Crimson Text";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("//www.queenanna.co/cdn/fonts/crimson_text/crimsontext_n7.5076cbe6a44b52f4358c84024d5c6b6585f79aea.woff2?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=ef92de1d2cfdaacc0e219bace1d783d5e6905c0214ef4e125b751517ed7b0b33") format("woff2"),
+       url("//www.queenanna.co/cdn/fonts/crimson_text/crimsontext_n7.8f5260d5ac57189dddbd2e97988d8f2e202b595b.woff?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=ff7384cdd6ac942e9b5603d9f1d5bfc5f23408640500a7a8c95c10e9adb097bd") format("woff");
+}
+
+  @font-face {
+  font-family: "Crimson Text";
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("//www.queenanna.co/cdn/fonts/crimson_text/crimsontext_i7.59b5c9ce57c35b127dcd012fffb521c55608d985.woff2?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=cf37c67853cdc61e840ef5b04a7c4fdcd40db788d5c7bc728669807d61256bb8") format("woff2"),
+       url("//www.queenanna.co/cdn/fonts/crimson_text/crimsontext_i7.17faaee45ed99fd118ae07fca5c33c7a095bcb6d.woff?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=5c5c916d00a76d9c67d9ccf0f6d4c73792ddb7355d66ffca4feaee4b3494f94f") format("woff");
+}
+
+
+  
+@font-face {
+  font-family: Lato;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("//www.queenanna.co/cdn/fonts/lato/lato_n4.c3b93d431f0091c8be23185e15c9d1fee1e971c5.woff2?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=ef6abb2ac5d66898ce8aa487b18fb0846ee43e45cab98554ac39b6680dd23e49") format("woff2"),
+       url("//www.queenanna.co/cdn/fonts/lato/lato_n4.d5c00c781efb195594fd2fd4ad04f7882949e327.woff?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=38a9ace1f71028f478b7535f8929b17d3a2276211f254811ea58a929abb46bc2") format("woff");
+}
+
+@font-face {
+  font-family: Lato;
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("//www.queenanna.co/cdn/fonts/lato/lato_i4.09c847adc47c2fefc3368f2e241a3712168bc4b6.woff2?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=59ec5db98bae92f12a1016b7324958e4a6ec97cab42e5761279e44e2313fe81d") format("woff2"),
+       url("//www.queenanna.co/cdn/fonts/lato/lato_i4.3c7d9eb6c1b0a2bf62d892c3ee4582b016d0f30c.woff?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=c56304261cd72bb433dd464d698866b098370f5acff4fba1305f849fb284c6da") format("woff");
+}
+
+@font-face {
+  font-family: Lato;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("//www.queenanna.co/cdn/fonts/lato/lato_n7.900f219bc7337bc57a7a2151983f0a4a4d9d5dcf.woff2?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=13d3abe8d8c41d0cfdbec9d66184cb5f4b7b185037c37b4a55d66e9e9aa55346") format("woff2"),
+       url("//www.queenanna.co/cdn/fonts/lato/lato_n7.a55c60751adcc35be7c4f8a0313f9698598612ee.woff?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=d667e11acba3be1437d7592047cdcdb7b7176c1d44c8713edc118e1ae8acc2d2") format("woff");
+}
+
+  @font-face {
+  font-family: Lato;
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("//www.queenanna.co/cdn/fonts/lato/lato_i7.16ba75868b37083a879b8dd9f2be44e067dfbf92.woff2?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=ee6bf5aa0f4d12da89f0e8498067e4b0bb01216eb7ff4c6138d6d17297e9a3de") format("woff2"),
+       url("//www.queenanna.co/cdn/fonts/lato/lato_i7.4c07c2b3b7e64ab516aa2f2081d2bb0366b9dce8.woff?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=b7a999f98129213fce563976e8aa2be4b2e10bc5d7d221d3d16dff36ccfea7f1") format("woff");
+}
+
+@font-face {
+  font-family: Lato;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("//www.queenanna.co/cdn/fonts/lato/lato_n4.c3b93d431f0091c8be23185e15c9d1fee1e971c5.woff2?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=ef6abb2ac5d66898ce8aa487b18fb0846ee43e45cab98554ac39b6680dd23e49") format("woff2"),
+       url("//www.queenanna.co/cdn/fonts/lato/lato_n4.d5c00c781efb195594fd2fd4ad04f7882949e327.woff?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=38a9ace1f71028f478b7535f8929b17d3a2276211f254811ea58a929abb46bc2") format("woff");
+}
+
+@font-face {
+  font-family: Lato;
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("//www.queenanna.co/cdn/fonts/lato/lato_i4.09c847adc47c2fefc3368f2e241a3712168bc4b6.woff2?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=59ec5db98bae92f12a1016b7324958e4a6ec97cab42e5761279e44e2313fe81d") format("woff2"),
+       url("//www.queenanna.co/cdn/fonts/lato/lato_i4.3c7d9eb6c1b0a2bf62d892c3ee4582b016d0f30c.woff?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=c56304261cd72bb433dd464d698866b098370f5acff4fba1305f849fb284c6da") format("woff");
+}
+
+@font-face {
+  font-family: Lato;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("//www.queenanna.co/cdn/fonts/lato/lato_n7.900f219bc7337bc57a7a2151983f0a4a4d9d5dcf.woff2?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=13d3abe8d8c41d0cfdbec9d66184cb5f4b7b185037c37b4a55d66e9e9aa55346") format("woff2"),
+       url("//www.queenanna.co/cdn/fonts/lato/lato_n7.a55c60751adcc35be7c4f8a0313f9698598612ee.woff?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=d667e11acba3be1437d7592047cdcdb7b7176c1d44c8713edc118e1ae8acc2d2") format("woff");
+}
+
+  @font-face {
+  font-family: Lato;
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("//www.queenanna.co/cdn/fonts/lato/lato_i7.16ba75868b37083a879b8dd9f2be44e067dfbf92.woff2?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=ee6bf5aa0f4d12da89f0e8498067e4b0bb01216eb7ff4c6138d6d17297e9a3de") format("woff2"),
+       url("//www.queenanna.co/cdn/fonts/lato/lato_i7.4c07c2b3b7e64ab516aa2f2081d2bb0366b9dce8.woff?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=b7a999f98129213fce563976e8aa2be4b2e10bc5d7d221d3d16dff36ccfea7f1") format("woff");
+}
+
+@font-face {
+  font-family: Lato;
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+  src: url("//www.queenanna.co/cdn/fonts/lato/lato_n1.28c16a27f5f7a3fc1b44cb5df6b7bbb1852b715f.woff2?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=49fad53da436c495f42a2c1d68d6abbbb0106f8f25ceb9a1e9123cc14a545b70") format("woff2"),
+       url("//www.queenanna.co/cdn/fonts/lato/lato_n1.bf54aec592a20656da3762a257204a332a144371.woff?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=b2a71163b0f7a5bb754cd9d1a120ad067d4aa20cc4bb1530f55b3857c0af38c3") format("woff");
+}
+
+  @font-face {
+  font-family: Lato;
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+  src: url("//www.queenanna.co/cdn/fonts/lato/lato_i1.7bae706c3055a9cfa69fabb03533e7e5b18e888e.woff2?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=70f0393660918c2075c3c81103a304d7042a78adf46c4fdbe11cb1a58777b3da") format("woff2"),
+       url("//www.queenanna.co/cdn/fonts/lato/lato_i1.f39e8bd3aa97d6b2bb1070b1d52c9bb63a31665c.woff?h1=cXVlZW5hbm5hLmNv&h2=cXVlZW4tYW5uYS5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=513b3ce3aa185029bc154a42d45be22ef1853b68ffe1bd60b0d92fa3a21a9afa") format("woff");
+}
+
+
+
+  
+
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+
+@keyframes placeholder-pulse {
+  from {
+    background-color: 
+
+
+
+
+
+
+#f2f2f2
+
+
+
+
+;
+  }
+  to {
+    background-color: #e5e5e5;
+  }
+}
+.template-gift_card {
+  font-family: "Nunito Sans",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.template-gift_card a {
+  text-decoration: none;
+}
+.template-gift_card .btn {
+  display: inline-block;
+  order: 2;
+  width: max-content;
+  padding: 1.5em;
+  font-size: 0.875em;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-transform: uppercase;
+  vertical-align: baseline;
+  background-color: #58686f;
+  border-radius: 4px;
+  zoom: 1;
+}
+.template-gift_card .btn:hover {
+  background-color: #414d53;
+}
+.template-gift_card .wrap {
+  width: 95%;
+  max-width: 540px;
+  margin: 0 auto;
+}
+.template-gift_card .wrap::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+@keyframes slideup {
+  0% {
+    opacity: 0;
+    transform: translateY(2000px) rotate(10deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+  80% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+@keyframes popup {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+  80% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes container-slide {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+.template-gift_card header {
+  padding: 3em 0;
+  text-align: center;
+  animation: fadein 0.5s ease-in-out both 0.4s;
+}
+.template-gift_card .shop-title {
+  font-family: "Crimson Text",serif;
+  font-style: normal;
+  font-weight: 400;
+  display: block;
+  max-width: 300px;
+  margin: 0 auto;
+  font-size: 2.25em;
+  color: #bfbfbf;
+  word-break: break-word;
+}
+.template-gift_card .shop-title:hover {
+  color: #999;
+}
+.template-gift_card .shop-title img {
+  max-height: 100%;
+  margin: 0 auto;
+}
+.template-gift_card main {
+  padding-bottom: 3em;
+  animation: slideup 0.8s ease-in-out;
+}
+.template-gift_card .gift-card-outer-container {
+  padding: 1em;
+  background-color: #34aadc;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset;
+  animation: container-slide 0.8s ease-in-out;
+}
+.template-gift_card .gift-card-inner-container {
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  animation: cardslide 0.8s ease-in-out;
+}
+.template-gift_card .gift-card-inner-container::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.template-gift_card .gift-card-header {
+  position: relative;
+  display: block;
+  padding: 0.75em;
+  overflow: hidden;
+  border-bottom: 1px solid #f2f2f2;
+}
+.template-gift_card .gift-card-header h2 {
+  float: left;
+  margin: 0.12em 0;
+  font-family: "Crimson Text",serif;
+  font-style: normal;
+  font-weight: 300;
+}
+.template-gift_card .gift-card-header .tag {
+  float: right;
+}
+.template-gift_card .tag {
+  padding: 0.5em;
+  padding-bottom: 0.35em;
+  font-size: 0.75em;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #bfbfbf;
+  border-radius: 4px;
+}
+.template-gift_card .tag.light {
+  color: #bfbfbf;
+  background: transparent;
+  border: 1px solid #d9d9d9;
+}
+.template-gift_card .gift-card-holder {
+  position: relative;
+  margin: 1.25em 0.75em;
+}
+.template-gift_card .gift-card-holder .corner {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 47px;
+  height: 47px;
+}
+.template-gift_card .gift-card-holder .corner.top-left {
+  top: -1px;
+  left: -1px;
+  background: url("//cdn.shopify.com/s/assets/gift-card/corner-top-left-1585103bdd46bf1297b88f31bdfce999.png") 0 0 no-repeat;
+}
+.template-gift_card .gift-card-holder .corner.bottom-right {
+  right: -1px;
+  bottom: -1px;
+  background: url("//cdn.shopify.com/s/assets/gift-card/corner-bottom-right-ba899b18631cb91859e186c2cc1c6970.png") 0 0 no-repeat;
+}
+.template-gift_card .gift-card {
+  position: relative;
+  box-sizing: border-box;
+}
+.template-gift_card .gift-card::before {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 10px;
+  content: "";
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  -webkit-user-select: none;
+          user-select: none;
+}
+.template-gift_card .gift-card img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+.template-gift_card .gift-card-code-outer {
+  position: absolute;
+  bottom: 1em;
+  width: 100%;
+  text-align: center;
+}
+.template-gift_card .gift-card-code-outer.medium {
+  font-size: 0.875em;
+}
+.template-gift_card .gift-card-code-outer.small {
+  font-size: 0.75em;
+}
+.template-gift_card .gift-card-code-inner {
+  display: inline-block;
+  max-width: 450px;
+  padding: 0.5em;
+  vertical-align: baseline;
+  background-color: #fff;
+  border-radius: 4px;
+  zoom: 1;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+.template-gift_card .gift-card-code-inner strong {
+  font-style: normal;
+  font-weight: 400;
+  display: inline-block;
+  padding: 0.4em 0.5em;
+  font-size: 1.875em;
+  line-height: 1;
+  color: #777;
+  text-transform: uppercase;
+  vertical-align: baseline;
+  border: 1px dashed #e5e5e5;
+  border-radius: 2px;
+  zoom: 1;
+}
+.template-gift_card .small .gift-card-code-inner {
+  overflow: auto;
+}
+.template-gift_card .disabled .gift-card-code-inner strong {
+  color: #999;
+  text-decoration: line-through;
+}
+.template-gift_card .gift-card-code-inner span + span {
+  margin-left: 0.25em;
+}
+.template-gift_card .gift-card-amount {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.4em 0.5em;
+  font-size: 2.75em;
+  color: #fff;
+}
+.template-gift_card .gift-card-amount.medium {
+  font-size: 2.25em;
+}
+.template-gift_card .gift-card-amount strong {
+  display: block;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+.template-gift_card .tooltip {
+  position: relative;
+}
+.template-gift_card .tooltip:hover .tooltip-container {
+  display: block;
+}
+.template-gift_card .tooltip-container {
+  position: absolute;
+  top: -50%;
+  right: 50%;
+  z-index: 3;
+  display: block;
+  margin-top: 0.25em;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  animation: popup 0.5s ease-in-out both 0.7s;
+}
+.template-gift_card .tooltip-triangle {
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  display: block;
+  width: 0;
+  height: 0;
+  margin-bottom: -5px;
+  margin-left: -5px;
+  border-top: 5px solid rgba(51, 51, 51, 0.9);
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  content: "";
+}
+.template-gift_card .tooltip-label {
+  font-family: "Nunito Sans",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  display: block;
+  position: relative;
+  right: -50%;
+  display: block;
+  min-height: 14px;
+  padding: 0.5em 0.75em;
+  margin-left: 0.25em;
+  font-size: 0.4em;
+  font-weight: 400;
+  line-height: 16px;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: none;
+  background: rgba(51, 51, 51, 0.9);
+  border: 0;
+  border-radius: 4px;
+}
+.template-gift_card .gift-card-instructions {
+  margin: 0 0.75em 1.5em;
+  font-size: 0.875em;
+  color: #999;
+  text-align: center;
+}
+.template-gift_card .gift-card-qr-code {
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+.template-gift_card .gift-card-qr-code img {
+  padding: 1.25em;
+  margin: 0 auto 1.25em;
+  border: 1px solid #f2f2f2;
+  border-radius: 10px;
+}
+.template-gift_card .gift-card-actions {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 1.25em 0.75em;
+  overflow: hidden;
+  text-align: center;
+  border-top: 1px solid #f2f2f2;
+}
+.template-gift_card .action-link {
+  order: 1;
+  margin-top: 1.75em;
+  font-size: 0.875em;
+  text-align: left;
+  letter-spacing: 0.2em;
+  color: #bfbfbf;
+  text-transform: uppercase;
+}
+.template-gift_card .action-link:hover {
+  color: #999;
+}
+.template-gift_card .action-link:hover .ico-16 {
+  opacity: 0.4;
+}
+.template-gift_card .ico-16 {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  margin-right: 0.5em;
+  margin-bottom: -1px;
+  vertical-align: bottom;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  opacity: 0.25;
+  zoom: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+.template-gift_card .ico-16.print {
+  background-image: url("//cdn.shopify.com/s/assets/gift-card/icon-print-164daa1ae32d10d1f9b83ac21b6f2c70.png");
+}
+.template-gift_card footer[role=contentinfo] {
+  padding-bottom: 3em;
+  text-align: center;
+  animation: fadein 0.5s ease-in-out both 0.4s;
+}
+.template-gift_card .gift-card-apple-wallet-badge {
+  display: inline-block;
+}
+.template-gift_card .gift-card-apple-wallet-badge-image {
+  display: block;
+}
+@media screen and (max-width: 580px) {
+  .template-gift_card body {
+    font-size: 15px;
+  }
+  .template-gift_card h2 {
+    font-size: 1.5em;
+  }
+  .template-gift_card .gift-card-outer-container {
+    padding: 0.5em;
+  }
+  .template-gift_card .tooltip-container {
+    top: -65%;
+  }
+  .template-gift_card .gift-card-actions {
+    grid-template-columns: 1fr;
+  }
+  .template-gift_card .gift-card-actions .btn {
+    order: 1;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    font-size: 1.125em;
+  }
+  .template-gift_card .action-link {
+    order: 2;
+    font-size: 1.125em;
+    text-align: center;
+  }
+  .template-gift_card .action-link + .action-link {
+    margin-left: 1.5em;
+  }
+}
+@media screen and (max-width: 400px) {
+  .template-gift_card h2 {
+    font-size: 1.25em;
+  }
+  .template-gift_card .gift-card {
+    font-size: 10px;
+  }
+  .template-gift_card .gift-card-holder .corner {
+    display: none;
+  }
+  .template-gift_card .gift-card-holder .corner.bottom-right {
+    background-position: bottom right !important;
+  }
+  .template-gift_card .gift-card-amount strong {
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  }
+  .template-gift_card .tooltip-container {
+    top: -75%;
+  }
+}
+@media screen and (max-height: 800px) {
+  .template-gift_card .shop-title {
+    max-height: 100px;
+  }
+}
+@media screen and (max-height: 750px) {
+  .template-gift_card .shop-title {
+    max-height: 80px;
+  }
+  .template-gift_card header {
+    padding: 2em 0;
+  }
+  .template-gift_card footer[role=contentinfo],
+  .template-gift_card main {
+    padding-bottom: 2em;
+  }
+}
+@media print {
+  @page {
+    .template-gift_card {
+      margin: 0.5cm;
+    }
+  }
+  .template-gift_card p,
+  .template-gift_card h2,
+  .template-gift_card h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  .template-gift_card h2,
+  .template-gift_card h3 {
+    page-break-after: avoid;
+  }
+  .template-gift_card body {
+    background-color: #fff;
+  }
+  .template-gift_card .gift-card-actions,
+  .template-gift_card .gift-card-holder .corner,
+  .template-gift_card .tooltip-container,
+  .template-gift_card .gift-card::before {
+    display: none;
+  }
+  .template-gift_card .gift-card-code-inner strong {
+    color: #555;
+  }
+  .template-gift_card .gift-card-amount .tooltip {
+    color: #fff !important;
+  }
+  .template-gift_card .shop-title {
+    color: #58686f;
+  }
+  .template-gift_card .gift-card-outer-container,
+  .template-gift_card .gift-card-inner-container,
+  .template-gift_card .gift-card-code-inner,
+  .template-gift_card .gift-card::before {
+    box-shadow: none;
+  }
+}
