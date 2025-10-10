@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="no-js no-touch" lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- Preconnect Domains -->
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.shopify.com" crossorigin>
+  <link rel="preconnect" href="https://monorail-edge.shopifysvc.com">
+
+  <!-- Preload Assets -->
+  <link rel="preload" href="{{ 'theme.css' | asset_url }}" as="style">
+  <link rel="preload" href="{{ 'atlantic.js' | asset_url }}" as="script">
+  <link rel="preload" href="{{ 'plugins.js' | asset_url }}" as="script">
+  <link rel="preload" href="{{ 'api.jquery.js' | shopify_asset_url }}" as="script">
+  <link rel="preload" href="{{ 'atlantic-icons.woff' | asset_url }}" as="font" type="font/woff" crossorigin>
+
+  {% if template contains 'cart' %}
+    <link rel="preload" href="{{ '/services/javascripts/countries.js' }}" as="script">
+    <link rel="preload" href="{{ 'shopify_common.js' | shopify_asset_url }}" as="script">
+    <link rel="preload" href="{{ 'jquery.cart.min.js' | asset_url }}" as="script">
+  {% endif %}
+
+  {% if template contains 'customers' %}
+    <link rel="preload" href="{{ 'shopify_common.js' | shopify_asset_url }}" as="script">
+    <link rel="preload" href="{{ 'customer_area.js' | shopify_asset_url }}" as="script">
+  {% endif %}
+
+  <title>
+    {{- page_title -}}
+
+    {%- if current_tags -%}
+      &ndash; "{{ current_tags | join: ', ' }}"
+    {%- endif -%}
+
+    {%- if current_page != 1 -%}
+      &ndash; {{ 'general.pagination.seo_title' | t }} {{ current_page }}
+    {%- endif -%}
+
+    {%- unless page_title contains shop.name -%}
+      &ndash; {{ shop.name }}
+    {%- endunless -%}
+  </title>
+
+  {% if page_description or shop.description != blank %}
+    <meta name="description" content="{% if page_description %}{{ page_description }}{% else %}{{ shop.description }}{% endif %}">
+  {% endif %}
+
+  {% render 'favicon' %}
+
+  {% if template contains 'collection' and current_tags %}
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href="{{ shop.url }}{{ collection.url }}" />
+  {% else %}
+    <link rel="canonical" href="{{ canonical_url }}" />
+  {% endif %}
+
+  {{ content_for_header }}
+
+  {% assign twitter_handle = settings.social_twitter_url | split: 'twitter.com/' | last %}
+  {%
+    render 'social-meta-tags',
+    twitter_handle: twitter_handle
+  %}
+
+  <script>
+    document.documentElement.className=document.documentElement.className.replace(/\bno-js\b/,'js');
+    if(window.Shopify&&window.Shopify.designMode)document.documentElement.className+=' in-theme-editor';
+    if(('ontouchstart' in window)||window.DocumentTouch&&document instanceof DocumentTouch)document.documentElement.className=document.documentElement.className.replace(/\bno-touch\b/,'has-touch');
+  </script>
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
+
+  <!-- Store object -->
+  {% render 'theme-options' %}
+  
+  <script>
+  (function(w, d, t, h, s, n) {
+    w.FlodeskObject = n;
+    var fn = function() {
+      (w[n].q = w[n].q || []).push(arguments);
+    };
+    w[n] = w[n] || fn;
+    var f = d.getElementsByTagName(t)[0];
+    var v = '?v=' + Math.floor(new Date().getTime() / (120 * 1000)) * 60;
+    var sm = d.createElement(t);
+    sm.async = true;
+    sm.type = 'module';
+    sm.src = h + s + '.mjs' + v;
+    f.parentNode.insertBefore(sm, f);
+    var sn = d.createElement(t);
+    sn.async = true;
+    sn.noModule = true;
+    sn.src = h + s + '.js' + v;
+    f.parentNode.insertBefore(sn, f);
+  })(window, document, 'script', 'https://assets.flodesk.com', '/universal', 'fd');
+</script>
+<script>
+  window.fd('form', {
+    formId: '5ee99d9bb9c153002b5ae196'
+  });
+</script>
+
+        <!-- SlideRule Script Start -->
+        {% include 'sliderule-data' %}
+        <!-- SlideRule Script End -->
+        </head>
+
+<body
+  class="
+    {% if template contains 'contact' %}
+      template-contact
+    {% else %}
+      template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
+    {% endif %}
+    {% if settings.meta-font == "'Open Sans' sans-serif" %}
+      font-open-sans
+    {% endif %}
+    {% if settings.main-title-uppercase %}
+      uppercase
+    {% endif %}
+    product-grid-{{ settings.product_grid_aspect_ratio }}
+  "
+  >
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=187795038002910";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  {% render 'photoswipe' %}
+
+  {% render 'quickshop' %}
+  {% comment %}Inject sidebar-drawer begin{% endcomment %}
+  <div class="sidebar-drawer-container" data-sidebar-drawer-container>
+    <div class="sidebar-drawer" data-sidebar-drawer tab-index="-1">
+      <div class="sidebar-drawer__header-container">
+        <div class="sidebar-drawer__header" data-sidebar-drawer-header></div>
+  
+        <button
+          class="sidebar-drawer__header-close"
+          aria-label="close"
+          data-sidebar-drawer-close
+        >
+          {% render 'icon' with 'close-alt' %}
+        </button>
+      </div>
+  
+      <div class="sidebar-drawer__content" data-sidebar-drawer-content></div>
+    </div>
+  </div>
+  {% comment %}Inject sidebar-drawer end{% endcomment %}
+
+
+  {% section 'pxs-announcement-bar' %}
+  {% section 'static-header' %}
+
+  <div class="page-body-content">
+    {{ content_for_layout }}
+  </div>
+
+  {% section 'static-footer' %}
+
+  <!-- Scripts -->
+  <script
+    src="{{ 'atlantic.js' | asset_url }}"
+    data-scripts
+    data-shopify-api-url="{{ 'api.jquery.js' | shopify_asset_url }}"
+    data-shopify-countries="/services/javascripts/countries.js"
+    data-shopify-common="{{ 'shopify_common.js' | shopify_asset_url }}"
+    data-shopify-cart="{{ 'jquery.cart.min.js' | asset_url }}"
+    data-customer-area="{{ 'customer_area.js'  | shopify_asset_url }}"
+    defer>
+  </script>
+
+  <script src="{{ 'api.jquery.js' | shopify_asset_url }}" defer></script>
+  <script src="{{ 'plugins.js' | asset_url }}" defer></script>
+
+  {% if template contains 'cart' %}
+    <script src="{{ '/services/javascripts/countries.js' }}" defer></script>
+    <script src="{{ "shopify_common.js" | shopify_asset_url }}" defer></script>
+    <script src="{{ 'jquery.cart.min.js' | asset_url }}" defer></script>
+  {% endif %}
+
+  {% if template contains 'customers' %}
+    <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer></script>
+    <script src="{{ 'customer_area.js'  | shopify_asset_url }}" defer></script>
+  {% endif %}
+
+  {% render 'structured-data' %}
+
+  <script>
+    (function () {
+      function handleFirstTab(e) {
+        if (e.keyCode === 9) { // the "I am a keyboard user" key
+          document.body.classList.add('user-is-tabbing');
+          window.removeEventListener('keydown', handleFirstTab);
+        }
+      }
+      window.addEventListener('keydown', handleFirstTab);
+    })();
+  </script>
+
+{% include 'swymSnippet' %}
+
+</body>
+</html>

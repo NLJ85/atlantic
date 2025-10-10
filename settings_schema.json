@@ -1,0 +1,585 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Atlantic",
+    "theme_author": "Pixel Union",
+    "theme_version": "18.1.0",
+    "theme_documentation_url": "https://support.pixelunion.net/hc/en-us/sections/360003907714-Atlantic",
+    "theme_support_url": "https://support.pixelunion.net/hc/en-us/requests/new"
+  },
+  {
+    "name": "t:settings_schema.age_gate.name",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_age_gate_site_wide",
+        "label": "t:settings_schema.age_gate.enable_site_wide.label",
+        "default": false
+      },
+      {
+        "type": "number",
+        "id": "age_gate_site_wide_min_age",
+        "label": "t:settings_schema.age_gate.minimum_age.label",
+        "default": 18
+      },
+      {
+        "type": "text",
+        "id": "age_gate_heading",
+        "label": "t:settings_schema.age_gate.heading.label",
+        "default": "Age Verification"
+      },
+      {
+        "type": "text",
+        "id": "age_gate_description",
+        "label": "t:settings_schema.age_gate.description.label",
+        "default": "Please enter your date of birth for full access."
+      },
+      {
+        "type": "checkbox",
+        "id": "show_age_gate_logo",
+        "label": "t:settings_schema.age_gate.show_logo.label",
+        "default": true,
+        "info": "t:settings_schema.age_gate.show_logo.info"
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General"
+      },
+      {
+        "type": "color",
+        "id": "background-colour",
+        "label": "Background"
+      },
+      {
+        "type": "color",
+        "id": "primary-border-colour",
+        "label": "Border"
+      },
+      {
+        "type": "color",
+        "id": "text-colour",
+        "label": "Text"
+      },
+      {
+        "type": "color",
+        "id": "title-colour",
+        "label": "Heading"
+      },
+      {
+        "type": "color",
+        "id": "accent-colour",
+        "label": "Accent"
+      },
+      {
+        "type": "color",
+        "id": "button-text-colour",
+        "label": "Button text"
+      },
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "color",
+        "id": "logotype-link-colour",
+        "label": "Logo text"
+      },
+      {
+        "type": "color",
+        "id": "header-action-link-colour",
+        "label": "Header action links"
+      },
+      {
+        "type": "header",
+        "content": "Navigation"
+      },
+      {
+        "type": "color",
+        "id": "nav-link-colour",
+        "label": "Links"
+      },
+      {
+        "type": "color",
+        "id": "nav-link-dropdown-colour",
+        "label": "Dropdown links",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "nav-background-colour",
+        "label": "Background"
+      },
+      {
+        "type": "color",
+        "id": "nav-border-colour",
+        "label": "Border"
+      },
+      {
+        "type": "header",
+        "content": "Product inventory level"
+      },
+      {
+        "type": "color",
+        "id": "in-stock-colour",
+        "label": "In stock",
+        "default": "#137311"
+      },
+      {
+        "type": "color",
+        "id": "low-stock-colour",
+        "label": "Low stock",
+        "default": "#D42B2B"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Body text"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "header",
+        "content": "Headings"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_headings",
+        "label": "Font",
+        "default": "helvetica_n7"
+      },
+      {
+        "type": "checkbox",
+        "id": "font_headings_captialize",
+        "label": "Capitalize",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Secondary headings"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_headings_secondary",
+        "label": "Font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "header",
+        "content": "Accent text"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_accent",
+        "label": "Font",
+        "default": "helvetica_n4"
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon image",
+        "info": "32 x 32px .png required"
+      }
+    ]
+  },
+  {
+    "name": "Products",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General"
+      },
+      {
+        "type": "select",
+        "id": "variant_options_style",
+        "label": "Variant options style",
+        "options": [
+          {
+            "value": "select",
+            "label": "Dropdowns"
+          },
+          {
+            "value": "radio",
+            "label": "Selectable boxes"
+          }
+        ],
+        "default": "select"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_quantity_selector",
+        "label": "Show quantity selector",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_payment_button",
+        "label": "Show dynamic checkout button",
+        "info": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_cart_redirection",
+        "label": "Enable cart redirection",
+        "info": "Automatically sends users to the Cart page after adding a product.",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "media_borders",
+        "label": "Show product media borders",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Grid"
+      },
+      {
+        "type": "checkbox",
+        "id": "show-brand-names",
+        "label": "Show vendor",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_atc",
+        "label": "Show add-to-cart button",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_product_secondary_image",
+        "label": "Show secondary image on hover",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_product_details_overlay",
+        "label": "Show product info on hover",
+        "default": false
+      },
+      {
+        "type": "select",
+        "id": "product_grid_aspect_ratio",
+        "label": "Product grid aspect ratio",
+        "options": [
+          {
+            "value": "default",
+            "label": "Natural"
+          },
+          {
+            "value": "square",
+            "label": "Square"
+          },
+          {
+            "value": "tall",
+            "label": "Tall"
+          },
+          {
+            "value": "taller",
+            "label": "Taller"
+          },
+          {
+            "value": "wide",
+            "label": "Wide"
+          }
+        ],
+        "default": "default"
+      },
+      {
+        "type": "header",
+        "content": "Quick shop"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable-quick-shop",
+        "label": "Enable quick shop",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "text",
+        "id": "behance-url",
+        "label": "Behance",
+        "placeholder": "https://behance.net/"
+      },
+      {
+        "type": "text",
+        "id": "clubhouse-url",
+        "label": "Clubhouse",
+        "placeholder": "https://clubhouse.com/"
+      },
+      {
+        "type": "text",
+        "id": "discord-url",
+        "label": "Discord",
+        "placeholder": "https://discord.com/"
+      },
+      {
+        "type": "text",
+        "id": "dribbble-url",
+        "label": "Dribbble",
+        "placeholder": "https://dribbble.com/shopify"
+      },
+      {
+        "type": "text",
+        "id": "email-url",
+        "label": "Email address"
+      },
+      {
+        "type": "text",
+        "id": "facebook-url",
+        "label": "Facebook",
+        "placeholder": "https://facebook.com/shopify"
+      },
+      {
+        "type": "text",
+        "id": "flickr-url",
+        "label": "Flickr",
+        "placeholder": "https://flickr.com/"
+      },
+      {
+        "type": "text",
+        "id": "houzz-url",
+        "label": "Houzz",
+        "placeholder": "https://houzz.com/"
+      },
+      {
+        "type": "text",
+        "id": "instagram-url",
+        "label": "Instagram",
+        "placeholder": "https://instagram.com/shopify"
+      },
+      {
+        "type": "text",
+        "id": "kickstarter-url",
+        "label": "Kickstarter",
+        "placeholder": "https://kickstarter.com/"
+      },
+      {
+        "type": "text",
+        "id": "linkedin-url",
+        "label": "LinkedIn",
+        "placeholder": "https://linkedin.com/company/shopify"
+      },
+      {
+        "type": "text",
+        "id": "medium-url",
+        "label": "Medium",
+        "placeholder": "https://medium.com/"
+      },
+      {
+        "type": "text",
+        "id": "messenger-url",
+        "label": "Messenger",
+        "placeholder": "https://www.messenger.com/"
+      },
+      {
+        "type": "text",
+        "id": "opensea-url",
+        "label": "OpenSea",
+        "placeholder": "https://opensea.io/"
+      },
+      {
+        "type": "text",
+        "id": "pinterest-url",
+        "label": "Pinterest",
+        "placeholder": "https://pinterest.com/shopify"
+      },
+      {
+        "type": "text",
+        "id": "reddit-url",
+        "label": "Reddit",
+        "placeholder": "https://reddit.com/r/shopify"
+      },
+      {
+        "type": "text",
+        "id": "rss-url",
+        "label": "RSS",
+        "placeholder": "https://www.shopify.com/content-services/feeds/ecommerce.atom"
+      },
+      {
+        "type": "text",
+        "id": "snapchat-url",
+        "label": "Snapchat",
+        "placeholder": "https://www.snapchat.com/"
+      },
+      {
+        "type": "text",
+        "id": "spotify-url",
+        "label": "Spotify",
+        "placeholder": "https://www.spotify.com/"
+      },
+      {
+        "type": "text",
+        "id": "tiktok-url",
+        "label": "TikTok",
+        "placeholder": "https://tiktok.com/@shopify"
+      },
+      {
+        "type": "text",
+        "id": "tumblr-url",
+        "label": "Tumblr",
+        "placeholder": "https://shopify.tumblr.com"
+      },
+      {
+        "type": "text",
+        "id": "twitch-url",
+        "label": "Twitch",
+        "placeholder": "https://www.twitch.tv/"
+      },
+      {
+        "type": "text",
+        "id": "x-url",
+        "label": "X",
+        "placeholder": "https://x.com/shopify"
+      },
+      {
+        "type": "text",
+        "id": "vimeo-url",
+        "label": "Vimeo",
+        "placeholder": "https://vimeo.com/"
+      },
+      {
+        "type": "text",
+        "id": "whatsapp-url",
+        "label": "WhatsApp",
+        "placeholder": "https://www.whatsapp.com/"
+      },
+      {
+        "type": "text",
+        "id": "youtube-url",
+        "label": "YouTube",
+        "placeholder": "https://www.youtube.com/user/shopify"
+      }
+    ]
+  },
+  {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_checkout_lock_icon",
+        "label": "Show lock icon on checkout buttons",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Cart message"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_cart_message",
+        "label": "Show cart message",
+        "default": false
+      },
+      {
+        "type": "inline_richtext",
+        "id": "cart_message",
+        "label": "Text",
+        "default": "Share a promo code here"
+      },
+      {
+        "type": "select",
+        "id": "cart_message_color_scheme",
+        "label": "Color scheme",
+        "options": [
+          {
+            "value": "contrast",
+            "label": "Contrast"
+          },
+          {
+            "value": "accent",
+            "label": "Accent"
+          }
+        ],
+        "default": "contrast"
+      },
+      {
+        "type": "header",
+        "content": "Free shipping bar",
+        "info": "Only shown on the cart drawer. Configure your shipping rates separately from the free shipping bar. [Learn more](\/admin\/settings\/shipping)"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_free_shipping_bar",
+        "label": "Enable free shipping bar",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "free_shipping_min_amount",
+        "label": "Free shipping minimum amount",
+        "info": "Only shown in your default currency. Enter a number without currency symbols or letters. Separate the currency main unit and subunit using a dot, if applicable. Example: '200.00'"
+      },
+      {
+        "type": "header",
+        "content": "Continue shopping button"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_continue_shopping",
+        "label": "Show 'continue shopping' button",
+        "default": true
+      },
+      {
+        "type": "url",
+        "id": "continue_shopping_link",
+        "label": "Link"
+      }
+    ]
+  },
+  {
+    "name": "Advanced",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Back to top"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_back_to_top",
+        "label": "Enable back-to-top button",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "back_to_top_desktop_position",
+        "label": "Desktop position",
+        "options": [
+          {
+            "value": "right",
+            "label": "Right"
+          },
+          {
+            "value": "left",
+            "label": "Left"
+          }
+        ],
+        "default": "right"
+      }
+    ]
+  }
+]

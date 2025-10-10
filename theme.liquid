@@ -1,0 +1,200 @@
+<!doctype html>
+<html class="no-js no-touch" lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta name="google-site-verification" content="Y0CKet-Bb2OV1UCStP7NaoJpA16_DvWF_AzbzokxBXk">
+    <script>
+      window.Store = window.Store || {};
+      window.Store.id = {{ shop.id }};
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.shopify.com" crossorigin>
+    <link rel="preconnect" href="https://monorail-edge.shopifysvc.com">
+    <link rel="preload" href="{{ 'theme.css' | asset_url }}" as="style">
+    <link rel="preload" href="{{ 'atlantic.js' | asset_url }}" as="script">
+    <link rel="preload" href="{{ 'api.jquery.js' | shopify_asset_url }}" as="script">
+    <link rel="preload" href="{{ 'atlantic-icons.woff' | asset_url }}" as="font" type="font/woff" crossorigin>
+    <title>
+      {{- page_title -}}
+      {%- if current_tags -%}&ndash; "{{ current_tags | join: ', ' }}"{%- endif -%}
+      {%- if current_page != 1 -%}
+        &ndash; {{ 'general.pagination.seo_title' | t }}
+        {{ current_page }}
+      {%- endif -%}
+      {%- unless page_title contains shop.name -%}&ndash; {{ shop.name }}{%- endunless -%}
+    </title>
+    {% if page_description or shop.description != blank %}
+      <meta
+        name="description"
+        content="{% if page_description %}{{ page_description }}{% else %}{{ shop.description }}{% endif %}"
+      >
+    {% endif %}
+    {% render 'favicon' %}
+    {% if template contains 'collection' and current_tags %}
+      <meta name="robots" content="noindex">
+      <link rel="canonical" href="{{ shop.url }}{{ collection.url }}">
+    {% else %}
+      <link rel="canonical" href="{{ canonical_url }}">
+    {% endif %}
+    {{ content_for_header }}
+    {% assign x_handle = settings['x-url'] | split: 'x.com/' | last | split: 'twitter.com/' | last %}
+    {% render 'social-meta-tags', twitter_handle: x_handle %}
+    <script>
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, 'js');
+      if (window.Shopify && window.Shopify.designMode) document.documentElement.className += ' in-theme-editor';
+      if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+          document.documentElement.className = document.documentElement.className.replace(/\bno-touch\b/, 'has-touch');
+      }
+    </script>
+    <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
+    <script>
+      window.Theme = {
+          version: "18.1.0",
+          name: 'Atlantic',
+          products: [],
+          shippingCalcErrorMessage: "{{ 'cart.shipping_calculator.error' | t | strip_newlines | replace: '\"', '\\"' }}",
+          shippingCalcMultiRates: "{{ 'cart.shipping_calculator.rates_html' | t | strip_newlines | replace: '\"', '\\"' }}",
+          shippingCalcOneRate: "{{ 'cart.shipping_calculator.rate' | t | strip_newlines | replace: '\"', '\\"' }}",
+          shippingCalcNoRates: "{{ 'cart.shipping_calculator.no_rates' | t | strip_newlines | replace: '\"', '\\"' }}",
+          shippingCalcRateValues: "{{ 'cart.shipping_calculator.rate_values_html' | t | strip_newlines | replace: '\"', '\\"' }}",
+          userLoggedIn: {% if shop.customer_accounts_enabled and customer %}true{% else %}false{% endif %},
+          userAddress: '{% if shop.customer_accounts_enabled and customer %}{{ customer.default_address }}{% endif %}',
+          centerHeader: {% if settings.center-header %}true{% else %}false{% endif %},
+          cartItemsOne: "{{ 'layout.header.item_count.one' | t | strip_newlines | escape }}",
+          cartItemsOther: "{{ 'layout.header.item_count.other' | t | strip_newlines | escape }}",
+          addToCart: "{{ 'products.product.add_to_cart' | t | strip_newlines | escape }}",
+          soldOut: "{{ 'products.product.sold_out' | t | strip_newlines | escape }}",
+          unavailable: "{{ 'products.product.unavailable' | t | strip_newlines | escape }}",
+          routes: {
+              root_url: "{{ routes.root_url }}",
+              account_url: "{{ routes.account_url }}",
+              account_login_url: "{{ routes.account_login_url }}",
+              account_logout_url: "{{ routes.account_logout_url }}",
+              account_register_url: "{{ routes.account_register_url }}",
+              account_addresses_url: "{{ routes.account_addresses_url }}",
+              collections_url: "{{ routes.collections_url }}",
+              all_products_collection_url: "{{ routes.all_products_collection_url }}",
+              search_url: "{{ routes.search_url }}",
+              cart_url: "{{ routes.cart_url }}",
+              cart_add_url: "{{ routes.cart_add_url }}",
+              cart_change_url: "{{ routes.cart_change_url }}",
+              cart_clear_url: "{{ routes.cart_clear_url }}",
+              product_recommendations_url: "{{ routes.product_recommendations_url }}",
+              predictive_search_url: "{{ routes.predictive_search_url }}"
+          }
+      };
+    </script>
+    {% include 'sliderule-data' %}
+  </head>
+  <body
+    class="
+      {% if template contains 'contact' %} template-contact
+      {% else %} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
+      {% endif %}
+      {% if settings.meta-font == "'Open Sans' sans-serif" %} font-open-sans
+      {% endif %}
+      {% if settings.main-title-uppercase %} uppercase
+      {% endif %}
+      product-grid-{{ settings.product_grid_aspect_ratio }}
+    "
+  >
+    <div id="fb-root"></div>
+    <script>
+      (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=187795038002910";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <svg
+      class="icon-star-reference"
+      aria-hidden="true"
+      focusable="false"
+      role="presentation"
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="3 3 17 17"
+      fill="none"
+    >
+      <symbol id="icon-star">
+          <rect class="icon-star-background" width="20" height="20" fill="currentColor"/>
+          <path d="M10 3L12.163 7.60778L17 8.35121L13.5 11.9359L14.326 17L10 14.6078L5.674 17L6.5 11.9359L3 8.35121L7.837 7.60778L10 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </symbol>
+      <clipPath id="icon-star-clip">
+          <path d="M10 3L12.163 7.60778L17 8.35121L13.5 11.9359L14.326 17L10 14.6078L5.674 17L6.5 11.9359L3 8.35121L7.837 7.60778L10 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </clipPath>
+    </svg>
+    {% render 'photoswipe' %}
+    {% render 'quickshop' %}
+    <div class="sidebar-drawer-container" data-sidebar-drawer-container>
+      <div class="sidebar-drawer" data-sidebar-drawer tab-index="-1">
+        {%- if settings.enable_cart_message -%}
+          <p class="sidebar-drawer__cart-message sidebar-drawer__cart-message-color-scheme--{{ settings.cart_message_color_scheme }}">
+            {{ settings.cart_message }}
+          </p>
+        {%- endif -%}
+        <div class="sidebar-drawer__header-container">
+          <div class="sidebar-drawer__header" data-sidebar-drawer-header></div>
+          <button class="sidebar-drawer__header-close" aria-label="close" data-sidebar-drawer-close>
+            {% render 'icon', name: 'close-alt' %}
+          </button>
+        </div>
+        {%- if settings.enable_free_shipping_bar
+          and settings.free_shipping_min_amount != blank
+          and cart.currency.iso_code == shop.currency
+        -%}
+          <div class="sidebar-drawer__free-shipping-banner" data-sidebar-drawer-free-shipping-banner></div>
+        {%- endif -%}
+        <div class="sidebar-drawer__content" data-sidebar-drawer-content></div>
+      </div>
+    </div>
+    {% sections 'header-group' %}
+    <div style="--background-color: {{ settings.background-colour }}">
+      {% render 'age-gate', id: 'page', sections: content_for_layout %}
+    </div>
+    <div class="page-body-content">
+      {{ content_for_layout }}
+    </div>
+    {%- if settings.enable_back_to_top -%}
+      {% render 'back-to-top' %}
+    {%- endif -%}
+    {% sections 'footer-group' %}
+    <script
+      src="{{ 'atlantic.js' | asset_url }}"
+      data-scripts
+      data-shopify-api-url="{{ 'api.jquery.js' | shopify_asset_url }}"
+      data-shopify-countries="/services/javascripts/countries.js"
+      data-shopify-common="{{ 'shopify_common.js' | shopify_asset_url }}"
+      data-shopify-cart="{{ 'jquery.cart.min.js' | asset_url }}"
+      data-customer-area="{{ 'customer_area.js' | shopify_asset_url }}"
+      defer
+    ></script>
+    <script async src="{{ 'api.jquery.js' | shopify_asset_url }}" defer></script>
+    {% if template contains 'cart' %}
+      <script async src="{{ '/services/javascripts/countries.js' }}" defer></script>
+      <script async src="{{ 'shopify_common.js' | shopify_asset_url }}" defer></script>
+      <script async src="{{ 'jquery.cart.min.js' | asset_url }}" defer></script>
+    {% endif %}
+    {% if template contains 'customers' %}
+      <script async src="{{ 'shopify_common.js' | shopify_asset_url }}" defer></script>
+      <script async src="{{ 'customer_area.js' | shopify_asset_url }}" defer></script>
+    {% endif %}
+    {% render 'structured-data' %}
+    <script>
+      (function () {
+          function handleFirstTab(e) {
+              if (e.keyCode === 9) { // the "I am a keyboard user" key
+                  document.body.classList.add('user-is-tabbing');
+                  window.removeEventListener('keydown', handleFirstTab);
+              }
+          }
+          window.addEventListener('keydown', handleFirstTab);
+      })();
+    </script>
+  </body>
+</html>
