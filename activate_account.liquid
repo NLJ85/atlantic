@@ -1,0 +1,77 @@
+<section
+  class="
+    content
+    content-area
+    customer
+    activate
+  "
+>
+  {% render 'breadcrumbs' %}
+
+  <div class="page-title">
+    <span class="label">
+      {{- 'customer.activate_account.header' | t -}}
+    </span>
+  </div>
+
+  <div class="account-form">
+    {% form 'activate_customer_password', class: 'activate-account-form' %}
+      <p class="message">
+        {{- 'customer.activate_account.subtext' | t -}}
+      </p>
+
+      {% if form.errors %}
+        <div class="error-message">
+          <span>{{ form.errors | default_errors }}</span>
+        </div>
+      {% endif %}
+
+      <div class="field-wrap password">
+        <label for="activate-account-form__password">
+          {{- 'general.password' | t -}}
+        </label>
+
+        <input
+          class="field"
+          id="activate-account-form__password"
+          type="password"
+          name="customer[password]"
+        >
+      </div>
+
+      <div class="field-wrap password-confirmation">
+        <label for="activate-account-form__password-confirmation">
+          {{- 'customer.general.password_confirmation' | t -}}
+        </label>
+
+        <input
+          class="field"
+          id="activate-account-form__password-confirmation"
+          type="password"
+          name="customer[password_confirmation]"
+        >
+      </div>
+
+      <button
+        class="
+          action-button
+          submit-button
+        "
+        type="submit"
+      >
+        {{- 'general.submit' | t -}}
+      </button>
+
+      <a
+        class="
+          decline
+          helper
+        "
+        href="{{ routes.root_url }}"
+      >
+        <span>{{ 'customer.general.or' | t }}</span>
+        {{ 'customer.activate_account.decline' | t }}
+      </a>
+    {% endform %}
+  </div>
+</section>

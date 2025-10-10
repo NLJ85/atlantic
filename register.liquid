@@ -1,0 +1,87 @@
+<section class="content content-area customer login">
+  {% render 'breadcrumbs' %}
+
+  <div class="page-title">
+    <span class="label">{{ 'general.sign_up' | t }}</span>
+  </div>
+
+  <div id="customer-create" class="account-form">
+    {% form 'create_customer', class: 'create-customer-form' %}
+      {% if form.errors %}
+        <div class="error-message">
+          <span>{{ form.errors | default_errors }}</span>
+        </div>
+      {% endif %}
+
+      <div class="field-wrap first-name">
+        <label for="create-customer-form__first-name">
+          {{- 'customer.addresses.first_name' | t -}}
+        </label>
+
+        <input
+          class="field"
+          id="create-customer-form__first-name"
+          type="text"
+          name="customer[first_name]"
+          placeholder=""
+          value=""
+        >
+      </div>
+
+      <div class="field-wrap last-name">
+        <label for="create-customer-form__last-name">
+          {{- 'customer.addresses.last_name' | t -}}
+        </label>
+
+        <input
+          class="field"
+          id="create-customer-form__last-name"
+          type="text"
+          name="customer[last_name]"
+          placeholder=""
+          value=""
+        >
+      </div>
+
+      <div class="field-wrap email">
+        <label for="create-customer-form__email">
+          {{- 'general.email' | t -}}
+        </label>
+
+        <input
+          class="field"
+          id="create-customer-form__email"
+          type="text"
+          name="customer[email]"
+          placeholder="your@email.com"
+          value=""
+        >
+      </div>
+
+      <div class="field-wrap password">
+        <label for="create-customer-form__password">
+          {{- 'general.password' | t -}}
+        </label>
+
+        <input
+          class="field"
+          id="create-customer-form__password"
+          type="password"
+          name="customer[password]"
+          placeholder=""
+          value=""
+        >
+      </div>
+
+      <button
+        class="
+          action-button
+          submit-button
+        "
+        type="submit"
+      >
+        {{- 'general.submit' | t -}}
+      </button>
+    {% endform %}
+  </div>
+</section>
